@@ -46,7 +46,7 @@
         alt=""
       />
       <div class="text-sm">
-        <span class="font-semibold text-gray-800">Video title</span>
+        <span class="font-semibold text-gray-800">{{video.snippet.title}}</span>
         <div class="mt-1 flex items-center">
           <span>Channel name</span>
           <svg
@@ -87,7 +87,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    video: {
+      type: Object,
+      default: (()=> {})
+    }
+  }
+};
 </script>
 
 <style></style>

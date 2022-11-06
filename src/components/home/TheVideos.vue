@@ -3,7 +3,11 @@
     <div
       class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-screen-2xl m-auto"
     >
-      <TheVideo />
+      <TheVideo
+        v-for="(video, index) in items"
+        :key="index"
+        :video="video"
+      />
     </div>
   </main>
 </template>
@@ -12,27 +16,34 @@
 import { defineComponent, onMounted, ref } from "vue";
 import TheVideo from "./TheVideo.vue";
 import Http from "../../services/main";
-interface items {
-  etag: string;
-  items: object[];
-  kind: string;
-  nextPageToken: string;
-  pageInfo: {
-    resultsPerPage: number;
-    totalResults: number;
-  };
-}
+import { videos } from "./types/g.types";
+
 export default defineComponent({
   components: {
     TheVideo,
   },
 
   setup() {
-    const videos = ref([] as items[]);
+    const videos = ref<videos[]>([]);
+    const items = ref([]);
 
     onMounted(async () => {
-      videos.value = await Http.get<items>();
+      try {
+        videos.value = await Http.get<videos>();
+        items.value = await videos.value.items.map((video) => {
+          return {...video, ...video.snippet};
+        });
+        console.log(items.value);
+        
+      } catch (error) {
+        console.log(error);
+      }
     });
+
+    return {
+      videos,
+      items
+    };
   },
 });
 </script>
