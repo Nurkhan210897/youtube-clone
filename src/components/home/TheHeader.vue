@@ -2,9 +2,8 @@
   <header class="flex justify-between fixed bg-white top-0 z-30 w-full">
     <div class="lg:w-1/4 flex">
       <div class="flex items-center xl:w-64 xl:bg-white pl-4">
-        <button class="mr-3 sm:ml-2 sm:mr-6 focus:outline-none" @click="openSidebar">
-          <SvgSprite symbol="ellipsis_horizontal" class="w-6 h-6" />
-        </button>
+        <BaseButton class="mr-3 sm:ml-2 sm:mr-6 focus:outline-none" icon="ellipsis_horizontal" @click="openSidebar">
+        </BaseButton>
         <a href="#">
           <SvgSprite class="w-20 h-14" symbol="logo" />
         </a>
@@ -55,9 +54,10 @@ import { defineComponent, ref } from 'vue'
 import Modal from '../baseComponents/modal.vue'
 import BaseDropdown from '../baseComponents/baseDropdown.vue'
 import { menuCategories } from "@/utils/index"
+import BaseButton from '../baseComponents/BaseButton.vue'
 
 export default defineComponent({
-  components: { Modal, BaseDropdown },
+  components: { Modal, BaseDropdown, BaseButton },
   emits: {
     openSidebar: () => {
       return Boolean;

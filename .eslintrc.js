@@ -4,9 +4,11 @@ module.exports = {
     "node": true
   },
   "extends": [
-    "plugin:vue/vue3-essential",
-    "@vue/airbnb",
-    "@vue/typescript/recommended"
+      'eslint:recommended',
+      'plugin:vue/vue3-recommended',
+      'eslint:recommended',
+      "plugin:vue/vue3-recommended",
+      "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": 2020
@@ -30,9 +32,26 @@ module.exports = {
     "Unnecessary semicolon": "off",
     "@typescript-eslint/no-extra-semi": "off",
     "eol-last": "off",
-    "linebreak-style": "warn",
+    "linebreak-style": "off",
     "arrow-body-style": "off",
     "vuejs-accessibility/label-has-for": "off",
     "import/order": "off"
   }
 }
+// module.exports = {
+//     env: {
+//       node: true,
+//     },
+//     extends: [
+//       'eslint:recommended',
+//       'plugin:vue/vue3-recommended',
+//       'eslint:recommended',
+//       "plugin:vue/vue3-recommended",
+//       "prettier"
+//     ],
+//     rules: {
+//       "no-undef": "off",
+//       // override/add rules settings here, such as:
+//       // 'vue/no-unused-vars': 'error'
+//     }
+//   }

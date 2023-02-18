@@ -7,7 +7,7 @@ import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   setup() {
-    const num = ref<string>('qwe');
+    const num = ref('qwe');
     return {
       num,
     };
