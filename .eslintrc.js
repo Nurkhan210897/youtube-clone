@@ -8,10 +8,13 @@ module.exports = {
       'plugin:vue/vue3-recommended',
       'eslint:recommended',
       "plugin:vue/vue3-recommended",
-      "prettier"
+      "prettier",
+      "plugin:vue/base"
   ],
+  "parser": 'vue-eslint-parser',
   "parserOptions": {
-    "ecmaVersion": 2020
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
   },
   "rules": {
     "@typescript-eslint/no-inferrable-types": "off",
@@ -35,23 +38,13 @@ module.exports = {
     "linebreak-style": "off",
     "arrow-body-style": "off",
     "vuejs-accessibility/label-has-for": "off",
-    "import/order": "off"
+    "import/order": "off",
+    "vue/attribute-hyphenation": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "vue/attributes-order": "off",
+    "vue/no-template-shadow": "off",
+    "vue/return-in-computed-property": "off",
+    "vue/no-dupe-keys": "off",
   }
 }
-// module.exports = {
-//     env: {
-//       node: true,
-//     },
-//     extends: [
-//       'eslint:recommended',
-//       'plugin:vue/vue3-recommended',
-//       'eslint:recommended',
-//       "plugin:vue/vue3-recommended",
-//       "prettier"
-//     ],
-//     rules: {
-//       "no-undef": "off",
-//       // override/add rules settings here, such as:
-//       // 'vue/no-unused-vars': 'error'
-//     }
-//   }

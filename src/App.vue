@@ -2,12 +2,12 @@
   <router-view />
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
+<script>
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   setup() {
-    const num = ref('qwe');
+    const num = ref("qwe");
     return {
       num,
     };
